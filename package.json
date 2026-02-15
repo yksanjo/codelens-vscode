@@ -1,0 +1,81 @@
+{
+  "name": "codelens-vscode",
+  "displayName": "CodeLens",
+  "description": "AI-powered code analysis for VS Code",
+  "version": "1.0.0",
+  "publisher": "codelens",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Developer Tools",
+    "Linters",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:python",
+    "onLanguage:go",
+    "onLanguage:java",
+    "onLanguage:rust",
+    "onLanguage:cpp",
+    "onCommand:codelens.analyze",
+    "onCommand:codelens.scanSecurity",
+    "onCommand:codelens.explain"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codelens.analyze",
+        "title": "CodeLens: Analyze Code",
+        "description": "Run full code analysis"
+      },
+      {
+        "command": "codelens.scanSecurity",
+        "title": "CodeLens: Security Scan",
+        "description": "Scan for security vulnerabilities"
+      },
+      {
+        "command": "codelens.explain",
+        "title": "CodeLens: Explain Code",
+        "description": "Explain selected code"
+      }
+    ],
+    "configuration": {
+      "title": "CodeLens",
+      "properties": {
+        "codelens.apiUrl": {
+          "type": "string",
+          "default": "http://localhost:3000",
+          "description": "CodeLens API URL"
+        },
+        "codelens.autoScan": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically scan files on save"
+        },
+        "codelens.failOnSeverity": {
+          "type": "string",
+          "default": "high",
+          "enum": ["critical", "high", "medium", "low", "none"],
+          "description": "Minimum severity to show warnings"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^2.3.8",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {}
+}
