@@ -1,81 +1,84 @@
-# CodeLens VS Code Extension
+# codelens-vscode
 
-AI-powered code analysis directly in your VS Code editor.
+## Detailed Description
 
-## Features
+codelens-vscode is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-- 🔒 **Security Scanning** - Detect vulnerabilities in your code
-- 📖 **Code Explanation** - Understand code with AI explanations
-- ⚡ **Quick Analysis** - Analyze entire files with one click
-- 🔌 **Works with CodeLens API** - Connect to your own API server
+## Problem Statement
 
-## Requirements
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-- VS Code 1.85+
-- CodeLens API running (default: http://localhost:3000)
+## Solution Overview
 
-## Installation
+Summarize the architecture, core modules, and runtime behavior at a high level.
 
-1. Clone this repository
-2. Run `npm install`
-3. Run `npm run compile`
-4. Press F5 to debug or package the extension
+## Key Features
 
-## Configuration
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
 
-Go to Settings → CodeLens to configure:
+## Repository Structure
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `codelens.apiUrl` | `http://localhost:3000` | CodeLens API URL |
-| `codelens.autoScan` | `false` | Auto-scan on file save |
-| `codelens.failOnSeverity` | `high` | Minimum severity to warn |
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
 
-## Commands
+## Getting Started
 
-Open Command Palette (Cmd/Ctrl + Shift + P):
+### Prerequisites
 
-- `CodeLens: Analyze Code` - Run full analysis
-- `CodeLens: Security Scan` - Scan for vulnerabilities  
-- `CodeLens: Explain Code` - Explain selected code
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
+
+```bash
+npm ci
+npm run lint
+npm test
+npm run build
+```
 
 ## Usage
 
-### Security Scanning
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-1. Open a file
-2. Run `CodeLens: Security Scan` from Command Palette
-3. Issues appear in Problems panel
+## Quality Standards
 
-### Code Explanation
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-1. Select code in editor
-2. Run `CodeLens: Explain Code`
-3. View explanation in new panel
+## Security
 
-### Full Analysis
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-1. Open a file
-2. Run `CodeLens: Analyze Code`
-3. View results in Output panel
+## Contributing
 
-## Connecting to API
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-Set the API URL in settings or set environment variable:
+## Roadmap
 
-```json
-{
-  "codelens.apiUrl": "http://localhost:3000"
-}
-```
+Track upcoming milestones, technical debt, and planned feature work.
 
-For remote API:
-```json
-{
-  "codelens.apiUrl": "https://your-api-server.com"
-}
-```
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
+This project is released under the MIT License.
